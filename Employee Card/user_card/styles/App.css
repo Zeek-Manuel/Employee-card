@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    height: 100vh;
+    padding: 0 .5rem;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+/* ----- Utility */
+.app-container {
+    max-width: 1520px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.app-header { 
+    text-transform: uppercase;
+    border-bottom: 2px solid gainsboro;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.employee-cards-container {
+    max-width: 1324px;
+    margin: 0 auto;
+    
+    width: 100%;
+}
+
+.d-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.employee-card {
+    background: white;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 .1rem 1.2rem rgba(30, 30, 30, .15);
+    border-radius: 20px;
+
+    transition: .3s ease;
+}
+
+.employee-card:hover {
+    box-shadow: 0 .1rem 1.2rem rgba(30, 30, 30, .3);
+}
+
+.employee-card:hover > .employee-avatar {
+    filter: grayscale(0);
+    border: 5px solid coral;
+}
+
+.employee-bio {
+    text-align: center;
+    font-size: .85rem;
+    color: black;
+    line-height: 28px;
+}
+
+.employee-location {
+    color: rgb(65, 65, 65);
+}
+
+.employee-name {
+    font-size: 1.2rem;;
+    color: rgb(3, 22, 30); 
+}
+
+.employee-avatar {
+    border-radius: 50%;
+    filter: grayscale(100%);
+    /* border: 5px solid gray; */
+
+    transition: .3s ease;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .d-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .employee-cards-container {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .app-header { 
+        font-size: 1rem;
+    }
+
+    .d-grid-4 {
+        grid-template-columns: 1fr;
+        gap: .9rem;
+    }
+    
+    .employee-cards-container {
+        padding: 0 1rem;
+    }
+}
